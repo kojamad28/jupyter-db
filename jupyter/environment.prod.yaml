@@ -1,0 +1,10 @@
+name: db
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - r-base
+  - r-essentials
+  - r-rlang
+  - r-tidyverse
+  - r-irkernel
