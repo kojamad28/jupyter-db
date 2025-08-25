@@ -49,13 +49,12 @@ services:
       context: ./jupyter
       args:
         ENV_YML: "environment.prod.yaml"
-        DIR_CONDA: "/opt/conda"
         VENV: "db"
         REQ_DIR: "requirements/"
         REQ_TXT: "prod.txt"
     image: kojamad28/jupyter-db-prod
     container_name: jupyterlab
-    command: jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''
+    command: mamba run --name db jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''
     ports:
      - "8888:8888"
     volumes:
